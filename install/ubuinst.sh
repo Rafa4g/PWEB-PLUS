@@ -41,13 +41,6 @@ done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"| lolcat
 tput cnorm
 }
-function verif_key () {
-krm=$(echo '5:q-3gs2.o7%8:1'|rev); chmod +x $_Ink/list > /dev/null 2>&1
-[[ ! -e "$_Ink/list" ]] && {
-echo -e "\n\033[1;31mKEY INVÁLIDA!\033[0m"
-rm -rf $HOME/Plus > /dev/null 2>&1
-sleep 2
-clear; exit 1
 }
 }
 system=$(cat /etc/issue.net)
@@ -73,12 +66,6 @@ echo -e "\033[1;31m \033[1;33m\033[0m"| lolcat
 echo ""
 echo -e "\033[1;31m▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣▣\033[0m"| lolcat
 echo ""
-echo -ne "\033[1;36mINFORME SUA KEY:\033[1;37m "| lolcat; read _key_
-if [[ -z $_key_ ]]; then
-echo ""
-echo -e "\033[1;31m KEY INVALIDA\033[1;32m"
-sleep 1
-clear; exit
 fi
 sed -i 's/Port 22222/Port 22/g' /etc/ssh/sshd_config  > /dev/null 2>&1
 service ssh restart  > /dev/null 2>&1
